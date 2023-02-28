@@ -1,0 +1,31 @@
+<section class="products-section">
+    <!-- <span class="link" routerLink=''>Product</span>
+    <span Product Details>{{ id }}</span> -->
+    <i *ngIf="product.isFavorite" class="fa fa-star favorite"></i>
+    <button class="button-30" (click)="goBack()">Back Home</button>
+    <div class="product-card-container">
+        <div class="product-image-self">
+            <img [src]="product.image"/>
+        </div>
+        <div class="product-details-one">
+            <div class="product-title-one">
+                <h2>{{ product.title }}</h2>
+            </div>
+            <h5>Description</h5>
+            <div class="product-desc-one">
+                <p>{{product.description}}</p>
+            </div>
+            <div class="product-price-one">
+                <h5>Price</h5>
+                <p>{{product.price}}$</p>
+            </div>
+            <div class="product-button-data">
+                <div class="product-data">
+                    <span [class]="{popular:product.sellNo > 19,notPopular:product.sellNo < 20}" *ngIf="product.sellNo">Ordered {{product.sellNo}} Times</span>
+                    <span>Added {{product.openDate.toString().slice(6,8)+"."+product.openDate.toString().slice(4,6)+"."+product.openDate.toString().slice(0,4)}}</span>
+                </div>
+                <button class="button-29">Add to Cart</button>
+            </div>
+        </div> 
+    </div>
+</section>    
